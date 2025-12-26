@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-
+import { ThemeToggle } from '@/components/common/ThemeToggle';
 const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'Work', path: '/work' },
@@ -80,7 +80,8 @@ export function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle />
             <Button variant="hero" size="default" asChild>
               <Link to="/contact" className="flex items-center gap-2">
                 <Download className="w-4 h-4" />
