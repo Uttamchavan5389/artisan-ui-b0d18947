@@ -2,41 +2,14 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ParticleBackground } from '@/components/common/ParticleBackground';
 
 export function HeroSection() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 particle-bg opacity-30" />
-      <div className="hero-glow top-1/4 left-1/4 animate-pulse-glow" />
-      <div className="hero-glow bottom-1/4 right-1/4 animate-pulse-glow" style={{ animationDelay: '1.5s' }} />
+      {/* Particle Background */}
+      <ParticleBackground />
       
-      {/* Animated gradient orbs */}
-      <motion.div
-        className="absolute top-20 right-20 w-96 h-96 rounded-full bg-gradient-to-r from-accent-purple/20 to-accent-violet/20 blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      />
-      <motion.div
-        className="absolute bottom-20 left-20 w-80 h-80 rounded-full bg-gradient-to-r from-accent-violet/20 to-accent-cyan/10 blur-3xl"
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      />
-
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
@@ -55,7 +28,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-tight mb-6"
+            className="text-hero text-foreground leading-tight mb-6"
           >
             Product Designer
             <br />
@@ -67,7 +40,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="text-body-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
           >
             Principal Product Designer with 15+ years of experience building 
             enterprise-grade systems that scale. Specializing in ERP, POS, 
